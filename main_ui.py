@@ -2,11 +2,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QListWidgetItem, QLabel, QVBoxLayout
 from see_ui import SeeDialog
 from add_ui import AddDialog
+from signup_ui import SignupDialog
 from login_ui import LoginDialog
 from PyQt5.QtWidgets import QHBoxLayout
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
-from database import run_database, get_idea_by_id, get_all_ideas, delete_idea
+from database import run_database, get_all_ideas, delete_idea
+from usermanager import check_signup
+import resources
 
 run_database()
 
@@ -84,13 +87,24 @@ class Ui_MainWindow(object):
 
     def setupUi(self, MainWindow):
         MainWindow.setWindowOpacity(0)
-        dialog = LoginDialog()
-        result = dialog.exec_()
-        if result == QtWidgets.QDialog.Accepted:
-            MainWindow.setWindowOpacity(1)
-            self.stat = True
+
+        auth = check_signup()
+        if auth != False:
+            dialog = LoginDialog(username=auth['username'],password_hash=auth['password_hash'])
+            result = dialog.exec_()
+            if result == QtWidgets.QDialog.Accepted:
+                MainWindow.setWindowOpacity(1)
+                self.stat = True
+            else:
+                self.stat = False
         else:
-            self.stat = False
+            dialog = SignupDialog()
+            result = dialog.exec_()
+            if result == QtWidgets.QDialog.Accepted:
+                MainWindow.setWindowOpacity(1)
+                self.stat = True
+            else:
+                self.stat = False
 
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1051, 760)
@@ -208,7 +222,6 @@ class Ui_MainWindow(object):
         self.delete_2.setText(_translate("MainWindow", "حذف"))
         self.label_3.setText(_translate("MainWindow", "ورود افراد غیر متفرقه ممنوع می باشد . لذا اگر بی اجازه وارد شده اید به سرعت خارج شوید . ورود بی اجازه به این نرم افزار و استفاده از متحوای داخل آن پیگرد قانونی دارد"))
         self.see.setText(_translate("MainWindow", "مشاهده"))
-import resources
 
 
 if __name__ == "__main__":

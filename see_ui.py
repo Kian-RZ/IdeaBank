@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDialog
 from database import get_idea_by_id
-
+import resources
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -60,7 +60,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "بانک ایده - مشاهده"))
         self.label.setText(_translate("Dialog", "مشاهده ایده"))
         self.title.setPlaceholderText(_translate("Dialog", "عنوان ایده"))
-import resources
 
 class SeeDialog(QDialog):
     def __init__(self, id, parent=None):
