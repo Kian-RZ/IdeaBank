@@ -2,20 +2,24 @@
 
 
 # Idea Bank - Manage Your Ideas
-Hi Guys . Today I Created a Managing Software For My Ideas . I Have Planed To Make It Privately . But Now I Think It Can Be UseFull For AnyBody . Sorry If My Name Is In App And Login . You Can Modify It Esely . I Try To Fix It
+You Can Manage Your Ideas In This App With Graphical User Interface In Persian Language
 
-### Application Login Password : 1390
-It Was A Application For Practice Pyqt5 , Python And Python Sqlite Connection
-
-If You Modify Code For Your Self You Can Export Executable File With This Pyinstaller Command Esely
-
-
-
-
-`pyinstaller --onefile --windowed --icon=logo.ico main_ui.py`
+### Features
+- Add And Delete Your Ideas
+- Authentication System
+- Working With sqlite3
+- Add Title And Description For Ideas
 
 ### Todo
-- [ ] Make Signup System For New Users
-- [ ] Dont Let Windows Scale 
+- [x] Make Signup System For New Users
+- [x] Disable Windows Scaling 
 - [ ] Password Changing System
 - [ ] Add Other Languages
+- [ ] Add Update Action For Ideas
+- [ ] Add Image Field For Ideas
+- [ ] Add Tag Field For Ideas
+- [ ] Add Search System
+- [ ] Create Splash Screen
+
+I Have Some Ideas For Making This App Better Such as New Powerfull UI , Cloud System , Teams And Collaboration And More Feature To Do Soon As Possible
+#### ⭐ If You Like This Project, Please Give Me Star . This Simple Action Will Make Me Very Happy . Thank You
