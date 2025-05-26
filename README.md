@@ -1,3 +1,6 @@
+![image](image.png)
+
+
 # Idea Bank - Manage Your Ideas
 Hi Guys . Today I Created a Managing Software For My Ideas . I Have Planed To Make It Privately . But Now I Think It Can Be UseFull For AnyBody . Sorry If My Name Is In App And Login . You Can Modify It Esely . I Try To Fix It
 
